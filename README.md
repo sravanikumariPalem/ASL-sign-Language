@@ -15,12 +15,6 @@ American Sign Language (ASL) has 26 hand gestures for letters and 10 for digits,
 I did not set out to build three models. I started with the CNN, got it working, and then ran into the problem I just described: visually similar signs were being confused with each other. That led me to look into sequence modelling, which introduced the CNN-LSTM combination. Once I had embeddings coming out of the LSTM, I wanted to understand them better, and swapping the KNN for a Random Forest gave me feature importance scores that let me actually inspect the embedding space. Each model grew out of a question the previous one raised.
  
 ---
-
-## Dataset 
-download dataset from https://www.kaggle.com/datasets/ayuraj/asl-dataset
-setup in you project folder and change the path in code.
-
----
  
 ## Models
  
@@ -72,6 +66,9 @@ RandomForest(n_estimators=300, max_features=sqrt, class_weight=balanced)
 ## Dataset
  
 The project uses the ASL dataset which contains labelled hand gesture images across all 36 classes. Images are resized to 64x64 for training speed. Increasing this to 224x224 would improve accuracy but takes significantly longer to train on a CPU.
+
+
+download dataset from https://www.kaggle.com/datasets/ayuraj/asl-dataset
  
 Update the `DATASET_PATH` variable at the top of the notebook before running.
  
